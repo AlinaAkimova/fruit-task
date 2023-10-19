@@ -1,4 +1,4 @@
 <template lang="pug">
-.layout
-    div A
+.article
+  div article
 </template>

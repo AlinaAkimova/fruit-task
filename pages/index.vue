@@ -1,5 +1,6 @@
 <template lang="pug">
 .index
-    div
-      p Hello
+  div
+    NuxtLayout
+      InfoCard
 </template>
