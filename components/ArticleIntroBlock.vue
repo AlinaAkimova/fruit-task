@@ -13,6 +13,10 @@ article(class='articleIntro')
 .articleIntro {
   display: flex;
 
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+
   &__image {
     margin-right: 30px;
     border-radius: 0 50% 0 0;

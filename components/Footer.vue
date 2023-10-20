@@ -34,12 +34,28 @@ footer(class="footer")
     display: flex;
     justify-content: space-between;
     width: 80%;
+    margin-bottom: 30px;
+
+    @media (max-width: 600px) {
+      width: 100%;
+
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &__smallSection {
     width: 20%;
     padding: 0;
     margin: 0;
+
+    @media (max-width: 1200px) {
+      width: 40%;
+    }
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
 
   &__infoText {
@@ -57,6 +73,12 @@ footer(class="footer")
   &__subscription {
     width: 80%;
     margin: auto;
+    bottom: 0;
+
+    @media (max-width: 600px) {
+      width: 100%;
+      left: 0;
+    }
   }
 }
 </style>

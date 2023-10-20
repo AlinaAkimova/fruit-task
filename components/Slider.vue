@@ -1,9 +1,9 @@
 <template lang="pug">
-swiper(class="swiper" :modules="modules" :pagination="{ clickable: true }" navigation)
-    swiper-slide(class="slide") Slide 1
-    swiper-slide(class="slide") Slide 2
-    swiper-slide(class="slide") Slide 3
-    swiper-slide(class="slide") Slide 4
+swiper(class="swiper" :pagination="{type: 'fraction',}" :navigation="true" :modules="modules")
+    swiper-slide(class="swiper__slide") Slide 1
+    swiper-slide(class="swiper__slide") Slide 2
+    swiper-slide(class="swiper__slide") Slide 3
+    swiper-slide(class="swiper__slide") Slide 4
 </template>
 
 <script>
@@ -31,14 +31,16 @@ export default defineComponent({
 .swiper {
   width: 100%;
   height: 400px;
-}
+  margin: 100px 0;
 
-.slide {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
+  &__slide {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
 }
 </style>

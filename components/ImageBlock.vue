@@ -6,9 +6,7 @@
 <style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
 .imageBlock {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 60px 0;
+  margin: 70px auto;
   &__image {
     width: 100%;
     border-radius: 2px 220px 2px 2px;

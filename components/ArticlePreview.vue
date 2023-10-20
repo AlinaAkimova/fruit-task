@@ -16,10 +16,12 @@ const { data: count } = await useFetch(
 <style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
 .articlePreview {
+  margin-bottom: 30px;
   &__button {
     @include font-main-text;
     background-color: $black;
     color: $white;
+
     border-radius: 2px;
     border: none;
     padding: 10px 50px;

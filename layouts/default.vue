@@ -9,10 +9,8 @@
 <style lang="scss" scoped>
 .layout {
   &__children {
-    margin-top: 50px;
+    margin: 50px auto;
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 </style>

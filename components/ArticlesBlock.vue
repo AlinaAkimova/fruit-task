@@ -1,6 +1,6 @@
 <template lang="pug">
 .articlesBlock
-  InfoCard(v-for="i in 5" class="articlesBlock__list")
+  ArticlePreview(v-for="i in 5" class="articlesBlock__list")
 </template>
 
 <style lang="scss" scoped>
