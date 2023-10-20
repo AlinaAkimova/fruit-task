@@ -25,7 +25,6 @@ footer(class="footer")
   border-top: 1px solid $grey;
   padding-top: 50px;
 
-  // position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -38,6 +37,8 @@ footer(class="footer")
 
     @media (max-width: 600px) {
       width: 100%;
+      padding-left: 20px;
+      box-sizing: border-box;
 
       flex-direction: column;
       justify-content: center;

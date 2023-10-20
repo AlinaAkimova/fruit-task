@@ -18,7 +18,7 @@ section(class="subscription")
   padding: 10px 30px;
   box-sizing: border-box;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -29,33 +29,55 @@ section(class="subscription")
     color: $white;
   }
 
-  &__input {
-    @include font-main-text;
-    background: none;
-    color: $grey;
+  &__email {
+    display: flex;
+    align-items: center;
 
-    border: none;
-    border-bottom: 1px solid $grey;
-    margin-right: 37px;
-
-    &:focus {
-      outline: none;
-      color: $white;
-      border-bottom: 1px solid $blue;
+    @media (max-width: 700px) {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
-  &__email {
-    display: flex;
+  &__input {
+    padding-bottom: 10px;
+    margin-right: 35px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $grey;
+
+    font-size: inherit;
+
+    color: $grey;
+    background-color: inherit;
+
+    &:focus {
+      border-color: $blue;
+      color: $white;
+    }
+
+    @media (max-width: 700px) {
+      margin-bottom: 20px;
+      width: 100%;
+    }
   }
 
   &__button {
-    @include font-main-text;
-    background-color: $blue;
-    color: $white;
+    max-width: 223px;
+    width: 100%;
+    padding: 10px 50px;
 
-    border-radius: 2px;
     border: none;
+    border-radius: 2px;
+
+    font-size: inherit;
+
+    background-color: $blue;
+    color: white;
+
+    @media (max-width: 800px) {
+      max-width: 100%;
+    }
   }
 }
 </style>

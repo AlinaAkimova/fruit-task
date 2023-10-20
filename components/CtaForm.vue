@@ -1,7 +1,7 @@
 <template lang="pug">
 .cta
   section(class="cta__section")
-    img(class="cta__img" src='/CtaImg.png')
+    img(class="cta__img" src='/CtaImg.png' alt="happy participant")
     form(class="cta__form")
       h2(class="cta__formHead") Стань участником проекта
       div(class="cta__formFields")
@@ -110,6 +110,7 @@
 
     &:focus {
       border-color: $blue;
+      color: $white;
     }
   }
 
