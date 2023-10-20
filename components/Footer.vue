@@ -8,18 +8,14 @@ footer(class="footer")
         p(class="footer__infoText") email
         p testblogsupport@gmail.com
         div(class="footer__links")
-            img(src='~/assets/facebook.svg' alt='fb')
-            img(src='~/assets/vk.svg' alt='vk')
-            img(src='~/assets/ig.svg' alt='ig')
-            img(src='~/assets/tg.svg' alt='tg')
-    section(class="footer__mailing")
-      p(class="footer__mailing-white") Подпишись на рассылку
-      div(class="footer__email")
-        input(type="text" placeholder="Email" class="footer__input")
-        button(class="footer__button") Подписаться
+            img(src='~/assets/links/facebook.svg' alt='fb')
+            img(src='~/assets/links/vk.svg' alt='vk')
+            img(src='~/assets/links/ig.svg' alt='ig')
+            img(src='~/assets/links/tg.svg' alt='tg')
+    Subscription(class="footer__subscription")
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
 .footer {
   display: flex;
@@ -29,7 +25,7 @@ footer(class="footer")
   border-top: 1px solid $grey;
   padding-top: 50px;
 
-  position: absolute;
+  // position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -58,44 +54,9 @@ footer(class="footer")
     width: 60%;
   }
 
-  &__mailing {
+  &__subscription {
     width: 80%;
-    display: flex;
-    justify-content: space-between;
-    background-color: $black;
-    border-radius: 2px;
-    padding: 10px 30px;
-
-    &-white {
-      @include font-info-bold;
-      color: $white;
-    }
-  }
-
-  &__input {
-    @include font-main-text;
-    background: none;
-    color: $grey;
-    border: none;
-    border-bottom: 1px solid $grey;
-    &:focus {
-      outline: none;
-      color: $white;
-      border-bottom: 1px solid $white;
-    }
-    margin-right: 37px;
-  }
-
-  &__email {
-    display: flex;
-  }
-
-  &__button {
-    @include font-main-text;
-    background-color: $blue;
-    color: $white;
-    border-radius: 2px;
-    border: none;
+    margin: auto;
   }
 }
 </style>

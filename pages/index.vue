@@ -2,5 +2,5 @@
 .index
   div
     NuxtLayout
-      InfoCard
+      ArticlesBlock
 </template>

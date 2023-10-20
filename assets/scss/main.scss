@@ -44,6 +44,12 @@
   font-weight: 400;
 }
 
+@mixin font-title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 66px;
+}
+
 $black: #1a1a1a;
 $white: #fdfeff;
 $grey: #8d959c;

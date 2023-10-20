@@ -1,4 +1,8 @@
 <template lang="pug">
 .article
-  div article
+  NuxtLayout
+    ArticleIntroBlock
+    ImageBlock
+    Slider
+    Subscription
 </template>
