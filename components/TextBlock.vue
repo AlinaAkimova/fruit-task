@@ -1,20 +1,14 @@
 <template lang="pug">
-.textBlock
-  h2(class="textBlock__title") Слияние Искусства и Технологии
-  p(class="textBlock__list") Виртуальная реальность и дополненная реальность вносят новые возможности и глубину в визуальное искусство. Художники будущего смогут создавать еще более впечатляющие и захватывающие произведения, уводя нас в миры, которые ранее могли существовать только в их воображении.
-  blockquote(class="textBlock__blockquote")
-    img(src="~/assets/icons/quotes.svg" alt="quotes" class="textBlock__quotes")
-    div(class="textBlock__blockquoteText")
-      p(class="textBlock__quote") «Медиахудожник работает с современным искусством. Слово „медиа“ появляется, потому что он работает в новых формах. Медиа как пространство, в котором может существовать произведение. Например, холст, покрытый красками, или превращённый в скульптуру камень — это старые медиа. Компьютер и игры на нём — новые медиа. 
-      footer(class="textBlock__author") Ярослав Кравцов, основатель студии «Мастерская 15»
-  h3(class="textBlock__subtitle") Будущее Динамичного 3D Цифрового Искусства
-  ul(class="textBlock__list")
-    li Роль в развлекательной индустрии (фильмы, игры, анимация)
-    li Дизайн интерьера и архитектурная визуализация
-    li Применение в медицинском моделировании и образовании
-  p(class="textBlock__list") Виртуальная реальность и дополненная реальность вносят новые возможности и глубину в визуальное искусство. Художники будущего смогут создавать еще более впечатляющие и захватывающие произведения, уводя нас в миры, которые ранее могли существовать только в их воображении.
+.textBlock(v-html="data")
 </template>
-<style lang="scss" scoped>
+
+<script setup>
+defineProps({
+  data: undefined,
+});
+</script>
+
+<style lang="scss">
 @import "~/assets/scss/main.scss";
 .textBlock {
   width: 70%;
@@ -22,45 +16,70 @@
 
   @media (max-width: 850px) {
     width: 100%;
+    margin: 50px auto;
   }
 
-  &__title {
+  h2 {
     @include font-subtitle-text;
   }
 
-  &__subtitle {
+  h3 {
     @include font-info-bold;
   }
 
-  &__quotes {
-    width: 80px;
-    height: 64px;
-    margin-right: 32px;
-  }
-  &__blockquoteText {
+  div {
     display: flex;
     flex-direction: column;
   }
 
-  &__quote {
-    @include font-italic-text;
-    color: $lightBlack;
-    margin: 0;
+  blockquote {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    margin: 40px 0;
+
+    &::before {
+      content: url("~/assets/icons/quotes.svg");
+      grid-column: 1;
+      margin-right: 32px;
+    }
+
+    p {
+      @include font-italic-text;
+      color: $lightBlack;
+      margin: 0;
+    }
+
+    footer {
+      @include font-info-thin;
+      color: $grey;
+      grid-column: 2;
+      margin-top: 15px;
+    }
   }
 
-  &__author {
-    @include font-info-thin;
-    color: $grey;
+  blockquote * {
+    display: block;
   }
 
-  &__blockquote {
-    display: flex;
-    justify-content: flex-start;
-    margin: 0;
-  }
-
-  &__list {
+  p,
+  ul {
     @include font-main-text;
+  }
+
+  li {
+    list-style-type: none;
+    list-style-position: outside;
+  }
+
+  li::before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: $black;
+    margin-right: 10px;
+    transform: rotate(45deg);
   }
 }
 </style>

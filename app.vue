@@ -8,7 +8,8 @@
 @import "~/assets/scss/main.scss";
 html,
 body,
-button {
+button,
+input {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;

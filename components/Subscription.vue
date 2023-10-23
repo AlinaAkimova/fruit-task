@@ -67,7 +67,7 @@ section(class="subscription")
     width: 100%;
     padding: 10px 50px;
 
-    border: none;
+    border: 1px solid $blue;
     border-radius: 2px;
 
     font-size: inherit;
@@ -75,9 +75,15 @@ section(class="subscription")
     background-color: $blue;
     color: white;
 
+    cursor: pointer;
+
     @media (max-width: 800px) {
       max-width: 100%;
     }
+  }
+
+  &__button:hover {
+    background-color: $grey;
   }
 }
 </style>

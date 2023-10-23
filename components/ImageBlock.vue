@@ -1,8 +1,15 @@
 <template lang="pug">
 .imageBlock
-  img(src="/imageBlock.png" alt='image' class="imageBlock__image")
-  p(class="imageBlock__imageDesc") Опубликовано 20.08.2022, Unsplash
+  img(:src="data?.src" alt='image' class="imageBlock__image")
+  p(class="imageBlock__caption") {{ data?.caption }}
 </template>
+
+<script setup>
+defineProps({
+  data: undefined,
+});
+</script>
+
 <style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
 .imageBlock {
@@ -10,11 +17,11 @@
   &__image {
     width: 100%;
     border-radius: 2px 220px 2px 2px;
+    max-height: 550px;
   }
 
-  &__imageDesc {
+  &__caption {
     text-align: right;
-    width: 15%;
     color: $grey;
     @include font-info-thin;
   }

@@ -1,46 +1,41 @@
 <template lang="pug">
-swiper(class="swiper" :pagination="{type: 'fraction',}" :navigation="true" :modules="modules")
-    swiper-slide(class="swiper__slide") Slide 1
-    swiper-slide(class="swiper__slide") Slide 2
-    swiper-slide(class="swiper__slide") Slide 3
-    swiper-slide(class="swiper__slide") Slide 4
+Swiper(:pagination="{ type: 'fraction' }" :navigation="true" :modules="modules" class="swiper")
+  SwiperSlide(class="swiper__slide" v-for="item in data")
+    img(:src="item" class="swiper__image")
 </template>
 
-<script>
-import { defineComponent } from "vue";
-import { Navigation, Pagination } from "swiper/modules";
+<script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination, Navigation } from "swiper/modules";
+
 import "swiper/css";
+import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default defineComponent({
-  url: import.meta.url,
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    return {
-      modules: [Navigation, Pagination],
-    };
-  },
+const modules = ref([Pagination, Navigation]);
+defineProps({
+  data: [],
 });
 </script>
 
 <style lang="scss" scoped>
 .swiper {
   width: 100%;
-  height: 400px;
+  height: 620px;
   margin: 100px 0;
 
   &__slide {
     width: 100%;
-    height: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
   }
 }
 </style>

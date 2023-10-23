@@ -2,7 +2,7 @@
 .cta
   section(class="cta__section")
     img(class="cta__img" src='/CtaImg.png' alt="happy participant")
-    form(class="cta__form")
+    form(class="cta__form" method="post")
       h2(class="cta__formHead") Стань участником проекта
       div(class="cta__formFields")
         input(class="cta__formInput" type="text" id="name" name="name" placeholder="Имя")
@@ -121,16 +121,23 @@
     padding-top: 10px;
     padding-bottom: 10px;
 
-    border: none;
+    border: 1px solid $blue;
+    border-radius: 2px;
 
     font-size: inherit;
 
     background-color: $blue;
     color: white;
 
+    cursor: pointer;
+
     @media (max-width: 800px) {
       max-width: 100%;
     }
+  }
+
+  &__formButton:hover {
+    background-color: $grey;
   }
 }
 </style>
