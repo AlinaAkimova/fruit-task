@@ -24,10 +24,15 @@ footer(class="footer")
   flex-direction: column;
   border-top: 1px solid $grey;
   padding-top: 50px;
+  margin-top: 50px;
 
   bottom: 0;
   left: 0;
   width: 100%;
+
+  @media (max-width: 850px) {
+    margin-top: 25px;
+  }
 
   &__bigSection {
     display: flex;
@@ -67,8 +72,11 @@ footer(class="footer")
 
   &__links {
     display: flex;
-    justify-content: space-between;
     width: 60%;
+
+    img {
+      margin-right: 15px;
+    }
   }
 
   &__subscription {

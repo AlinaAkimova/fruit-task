@@ -8,24 +8,71 @@ Swiper(:pagination="{ type: 'fraction' }" :navigation="true" :modules="modules" 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Navigation } from "swiper/modules";
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
 const modules = ref([Pagination, Navigation]);
 defineProps({
   data: [],
 });
 </script>
 
+<style lang="scss">
+@import "swiper/scss";
+@import "swiper/scss/pagination";
+@import "swiper/scss/navigation";
+@import "~/assets/scss/main.scss";
+
+.swiper {
+  .swiper-button-prev, .swiper-button-next {
+    background-color: $black;
+    color: $white;
+
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+
+    @media (max-width: 1200px) {
+      width: 45px;
+      height: 45px;
+    }
+
+    @media (max-width: 800px) {
+      width: 25px;
+      height: 25px;
+    }
+
+    &::after {
+      content: "";
+      width: 25%;
+      height: 25%;
+      border-top: 3px solid $white;
+      border-right: 3px solid $white;
+    }
+  }
+
+  .swiper-button-next {
+    right: 0;
+    &::after {
+      margin-right: 3px;
+      transform: rotate(45deg);
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+    &::after {
+      margin-left: 3px;
+      transform: rotate(-135deg);
+    }
+  }
+}
+</style>
+
 <style lang="scss" scoped>
 .swiper {
   width: 100%;
-  height: 620px;
   margin: 100px 0;
 
   &__slide {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +82,8 @@ defineProps({
   &__image {
     width: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 0 100px 45px 100px;
   }
 }
 </style>

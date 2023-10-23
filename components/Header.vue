@@ -7,5 +7,6 @@ header(class="header")
 .header {
   display: flex;
   justify-content: center;
+  padding-top: 25px;
 }
 </style>

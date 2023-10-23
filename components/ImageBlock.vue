@@ -14,6 +14,11 @@ defineProps({
 @import "~/assets/scss/main.scss";
 .imageBlock {
   margin: 70px auto;
+
+  @media (max-width: 850px) {
+    margin: 50px auto;
+  }
+
   &__image {
     width: 100%;
     border-radius: 2px 220px 2px 2px;

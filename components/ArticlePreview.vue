@@ -2,7 +2,7 @@
 .articlePreview
   img(:src="article?.image" alt='article image' class="articlePreview__image")
   h3 {{ article?.title }}
-  button(class="articlePreview__button" @click="navigate(article?.link)") Читать
+  button(class="articlePreview__button" @click="() => navigate(article?.link)") Читать
 </template>
 
 <script setup>
@@ -10,9 +10,8 @@ defineProps({
   article: undefined,
 });
 
-const navigate = (link) => {
-  console.log(link);
-  navigateTo(link, { external: true });
+const navigate = async (link) => {
+  await navigateTo(link ?? "", { external: true });
 };
 </script>
 

@@ -73,7 +73,7 @@ section(class="subscription")
     font-size: inherit;
 
     background-color: $blue;
-    color: white;
+    color: $white;
 
     cursor: pointer;
 
