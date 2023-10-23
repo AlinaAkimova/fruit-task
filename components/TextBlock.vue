@@ -67,19 +67,20 @@ defineProps({
   }
 
   li {
-    list-style-type: none;
-    list-style-position: outside;
+    list-style: none;
   }
 
   li::before {
     content: "";
     position: relative;
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.5em;
+    margin-left: -1em;
     background-color: $black;
-    margin-right: 10px;
     transform: rotate(45deg);
+    vertical-align: 0.1em;
   }
 }
 </style>

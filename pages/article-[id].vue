@@ -6,7 +6,6 @@
 
 <script setup>
 import { useArticleStore } from "~/store/article";
-
 const components = {
   article_intro_block: resolveComponent("ArticleIntroBlock"),
   text_block: resolveComponent("TextBlock"),
@@ -20,7 +19,12 @@ const components = {
 const route = useRoute();
 const store = useArticleStore();
 
-const { meta, article } = storeToRefs(store);
+const { article } = storeToRefs(store);
 
 await store.fetchArticle(route.path);
+
+useSeoMeta({
+  title: store.meta.title,
+  description: store.meta.description,
+});
 </script>

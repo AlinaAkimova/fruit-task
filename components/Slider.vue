@@ -1,6 +1,6 @@
 <template lang="pug">
 Swiper(:pagination="{ type: 'fraction' }" :navigation="true" :modules="modules" class="swiper")
-  SwiperSlide(class="swiper__slide" v-for="item in data")
+  SwiperSlide(class="swiper__slide" v-for="item in data" :key="item")
     img(:src="item" class="swiper__image")
 </template>
 
@@ -10,7 +10,7 @@ import { Pagination, Navigation } from "swiper/modules";
 
 const modules = ref([Pagination, Navigation]);
 defineProps({
-  data: [],
+  data: {}, // object because we get Proxy from Array
 });
 </script>
 
@@ -21,7 +21,8 @@ defineProps({
 @import "~/assets/scss/main.scss";
 
 .swiper {
-  .swiper-button-prev, .swiper-button-next {
+  .swiper-button-prev,
+  .swiper-button-next {
     background-color: $black;
     color: $white;
 

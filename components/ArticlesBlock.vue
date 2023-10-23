@@ -1,11 +1,6 @@
 <template lang="pug">
-h2(class="title") {{data?.title}}
+h2(v-if="!isHome()" class="title") {{data?.title}}
 .articlesBlock
-  ArticlePreview(
-    v-for="article in articles"
-    :key="article.title"
-    :article="article"
-  )
   ArticlePreview(
     v-for="article in data?.articles"
     :key="article.title"
@@ -15,9 +10,11 @@ h2(class="title") {{data?.title}}
 
 <script setup>
 defineProps({
-  articles: [],
-  data: undefined,
+  data: {},
 });
+
+const route = useRoute();
+const isHome = () => route.path === "/";
 </script>
 
 <style lang="scss" scoped>
